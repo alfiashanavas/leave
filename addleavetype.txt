@@ -1,0 +1,82 @@
+<?php
+include_once('dbcon.php');
+?>
+
+<?php
+
+
+
+if(isset($_POST['submit']))
+{
+$empname=$_POST['empname'];
+$description=$_POST['description'];
+
+
+
+
+$sql="INSERT INTO `add leave type`(`empname`,  `description`) VALUES
+ ('$empname','$description');";
+	
+	$res=mysqli_query($con,$sql) ;
+	
+}
+?>
+
+
+
+
+<html>
+<head>
+<link rel="stylesheet" type= "text/css"  href = "leave.css">
+<style>
+body
+{
+
+background-repeat:no repeat;
+border-style:"solid";
+border-width:"thick";
+
+
+
+
+}
+h1
+{
+text-align:center;
+color:black;
+text-decoration:underline;
+}
+</style>
+</head>
+<body>
+<h1>ADD LEAVE TYPE</h1>
+<form action="" method="post" name="form">
+<fieldset>
+
+     
+empname:<input type="text" name="empname"> 
+  </br>
+
+   
+  description: <input type="text" name="description"> 
+  </br> 
+   
+ 
+  
+  
+<p>	
+  
+ <input type ="submit" name="submit" value= "submit">
+   <input type = "reset" name="reset" value= "reset">
+  
+
+    
+  
+    
+    
+</p>
+</form>
+</fieldset
+</body>
+</html> 
+ 

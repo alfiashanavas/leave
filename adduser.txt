@@ -1,0 +1,93 @@
+<?php
+include_once('dbcon.php');
+?>
+
+<?php
+
+
+
+if(isset($_POST['submit']))
+{
+$name=$_POST['name'];
+$address=$_POST['address'];
+$gender=$_POST['gender'];
+$department=$_POST['department'];
+$username=$_POST['username'];
+$password=$_POST['password'];
+$phoneno=$_POST['phoneno'];
+$email=$_POST['email'];
+
+$sql="INSERT INTO `registration`(`user_id`, `name`, `address`,`gender`,`phoneno`,`email`,`departmentid`,`status`) VALUES
+ ('$name','$address','gender','department','username','password','phoneno','email');";
+	
+	$res=mysqli_query($con,$sql) ;
+	
+}
+?>
+
+
+
+
+<html>
+<head>
+<link rel="stylesheet" type= "text/css"  href = "leave.css">
+<style>
+body
+{
+
+background-repeat:no repeat;
+border-style:"solid";
+border-width:"thick";
+
+
+
+
+}
+h1
+{
+text-align:center;
+color:black;
+text-decoration:underline;
+}
+</style>
+</head>
+<body>
+<h1>ADD USER</h1>
+<form action="" method="post" name="form">
+<fieldset>
+
+     
+name:<input type="text" name="name"> 
+  </br>
+
+   
+  addresss: <input type="text" name="address"> 
+  </br> 
+  gender:<input type="text" name="gender"> 
+  </br> 
+ department:<input type="text" name="department"> 
+  </br> 
+  username:<input type="text" name="username"> 
+  </br> 
+password:<input type="text" name="password"> 
+  </br>  
+ phoneno:<input type="text" name="phoneno"> 
+  </br>   
+ email:<input type="text" name="email"> 
+  </br>  
+<p>	
+  
+ <input type ="submit" name="submit" value= "submit">
+   <input type = "reset" name="reset" value= "reset">
+  
+
+    
+  
+    
+    
+</p>
+</form>
+</fieldset
+</body>
+</html> 
+ 
